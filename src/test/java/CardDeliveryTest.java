@@ -4,7 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 
 import static com.codeborne.selenide.Condition.*;
-import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.*;
 import static org.openqa.selenium.Keys.chord;
@@ -28,7 +27,8 @@ public class CardDeliveryTest {
         $("[data-test-id=agreement]").click();
         $$(".form button").find(exactText("Забронировать")).click();
         $(withText("Успешно!")).waitUntil(visible, 15000);
-        $(byText("Успешно!")).waitUntil(visible, 15000);
+        $("[data-test-id=notification]").shouldHave(text("Встреча успешно забронирована на"));
+        $("[data-test-id=notification]").shouldHave(text(currentDate));
     }
 
     @Test
