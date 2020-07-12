@@ -19,6 +19,7 @@ public class CardDeliveryTest {
     void shouldInputIsCorrect() {
         open("http://localhost:9999");
         $("[data-test-id='city'] input").setValue("Хабаровск");
+        $("[class='input__control'][type=tel][maxlength='10']").sendKeys(selectAll, del);
         $("[data-test-id='date'] input").setValue("17.07.2020");
         $("[data-test-id='name'] input").setValue("Копатилов Андрей");
         $("[data-test-id='phone'] input").setValue("+79098765432");
@@ -33,6 +34,7 @@ public class CardDeliveryTest {
     void shouldPhoneNotCorrect() {
         open("http://localhost:9999");
         $("[data-test-id='city'] input").setValue("Хабаровск");
+        $("[class='input__control'][type=tel][maxlength='10']").sendKeys(selectAll, del);
         $("[data-test-id='date'] input").setValue("17.07.2020");
         $("[data-test-id='name'] input").setValue("Копатилов Андрей");
         $("[data-test-id='phone'] input").setValue("89098765432");
@@ -46,7 +48,8 @@ public class CardDeliveryTest {
     void shouldNameNotCorrect() {
         open("http://localhost:9999");
         $("[data-test-id='city'] input").setValue("Хабаровск");
-        $("[data-test-id='date'] input").setValue("currentDate");
+        $("[class='input__control'][type=tel][maxlength='10']").sendKeys(selectAll, del);
+        $("[data-test-id='date'] input").setValue("17.07.2020");
         $("[data-test-id='name'] input").setValue("Kopatilov Andrey");
         $("[data-test-id='phone'] input").setValue("+79098765432");
         $("[data-test-id=agreement]").click();
@@ -58,7 +61,8 @@ public class CardDeliveryTest {
     void shouldChecboxNotClick() {
         open("http://localhost:9999");
         $("[data-test-id='city'] input").setValue("Хабаровск");
-        $("[data-test-id='date'] input").setValue("currentDate");
+        $("[class='input__control'][type=tel][maxlength='10']").sendKeys(selectAll, del);
+        $("[data-test-id='date'] input").setValue("17.07.2020");
         $("[data-test-id='name'] input").setValue("Копатилов Андрей");
         $("[data-test-id='phone'] input").setValue("+79098765432");
         $$("button").find(exactText("Забронировать")).click();
@@ -69,7 +73,8 @@ public class CardDeliveryTest {
     @Test
     void shouldCityNotSelected() {
         open("http://localhost:9999");
-        $("[data-test-id='date'] input").setValue("currentDate");
+        $("[class='input__control'][type=tel][maxlength='10']").sendKeys(selectAll, del);
+        $("[data-test-id='date'] input").setValue("17.07.2020");
         $("[data-test-id='name'] input").setValue("Копатилов Андрей");
         $("[data-test-id='phone'] input").setValue("+79098765432");
         $("[data-test-id=agreement]").click();
@@ -82,7 +87,8 @@ public class CardDeliveryTest {
     void shouldCityNotUnavailable() {
         open("http://localhost:9999");
         $("[data-test-id='city'] input").setValue("Бикин");
-        $("[data-test-id='date'] input").setValue("currentDate");
+        $("[class='input__control'][type=tel][maxlength='10']").sendKeys(selectAll, del);
+        $("[data-test-id='date'] input").setValue("17.07.2020");
         $("[data-test-id='name'] input").setValue("Копатилов Андрей");
         $("[data-test-id='phone'] input").setValue("+79098765432");
         $("[data-test-id=agreement]").click();
