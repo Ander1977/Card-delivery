@@ -8,8 +8,8 @@ import static org.openqa.selenium.Keys.chord;
 
 public class CardDeliveryTest {
 
-    DateUtils currentDatePlusThreeDay = new DateUtils();
-    public String currentDate = currentDatePlusThreeDay.localDate();
+    DateUtils currentDateTimePlusThreeDay = new DateUtils();
+    public String currentDate = currentDateTimePlusThreeDay.localDateTime();
     public String selectAll = chord(Keys.CONTROL, "a");
     public Keys del = Keys.DELETE;
 
@@ -19,7 +19,7 @@ public class CardDeliveryTest {
     void shouldInputIsCorrect() {
         open("http://localhost:9999");
         $("[data-test-id='city'] input").setValue("Хабаровск");
-        $("[data-test-id='date'] input").setValue("currentDate");
+        $("[data-test-id='date'] input").setValue("17.07.2020");
         $("[data-test-id='name'] input").setValue("Копатилов Андрей");
         $("[data-test-id='phone'] input").setValue("+79098765432");
         $("[data-test-id=agreement]").click();
@@ -33,7 +33,7 @@ public class CardDeliveryTest {
     void shouldPhoneNotCorrect() {
         open("http://localhost:9999");
         $("[data-test-id='city'] input").setValue("Хабаровск");
-        $("[data-test-id='date'] input").setValue("currentDate");
+        $("[data-test-id='date'] input").setValue("17.07.2020");
         $("[data-test-id='name'] input").setValue("Копатилов Андрей");
         $("[data-test-id='phone'] input").setValue("89098765432");
         $("[data-test-id=agreement]").click();
