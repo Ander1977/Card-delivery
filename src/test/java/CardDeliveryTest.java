@@ -1,8 +1,6 @@
 
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.*;
@@ -10,7 +8,7 @@ import static org.openqa.selenium.Keys.chord;
 
 public class CardDeliveryTest {
 
-    LocalDatePlusThreeDay currentDatePlusThreeDay = new LocalDatePlusThreeDay();
+    DateUtils currentDatePlusThreeDay = new DateUtils();
     public String currentDate = currentDatePlusThreeDay.localDate();
     public String selectAll = chord(Keys.CONTROL, "a");
     public Keys del = Keys.DELETE;
@@ -65,7 +63,7 @@ public class CardDeliveryTest {
         $("[data-test-id='phone'] input").setValue("+79098765432");
         $$("button").find(exactText("Забронировать")).click();
         $("[data-test-id=agreement]").shouldHave(text("Я соглашаюсь с условиями обработки и использования моих персональных данных"));
-        $(".input_invalid[data-test-id=agreement]");
+        $(".input_invalid[data-test-id=agreement]").shouldHave(cssValue("color", "rgba(255, 92, 92, 1)"));
     }
 
     @Test
@@ -76,7 +74,7 @@ public class CardDeliveryTest {
         $("[data-test-id='phone'] input").setValue("+79098765432");
         $("[data-test-id=agreement]").click();
         $$("button").find(exactText("Забронировать")).click();
-        $(By.className("input_invalid")).shouldHave(text("Поле обязательно для заполнения"));
+        $(".input_invalid[data-test-id='city']").shouldHave(text("Поле обязательно для заполнения"));
 
     }
 
