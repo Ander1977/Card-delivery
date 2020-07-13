@@ -20,7 +20,7 @@ public class CardDeliveryTest {
         open("http://localhost:9999");
         $("[data-test-id='city'] input").setValue("Хабаровск");
         $("[data-test-id='date'] input").sendKeys(selectAll, del);
-        $("[class='input__control'][type=tel]").setValue(currentDate);
+        $("[data-test-id='date'] input").setValue(currentDate);
         $("[data-test-id='name'] input").setValue("Копатилов Андрей");
         $("[data-test-id='phone'] input").setValue("+79098765432");
         $("[data-test-id=agreement]").click();
@@ -35,7 +35,7 @@ public class CardDeliveryTest {
         open("http://localhost:9999");
         $("[data-test-id='city'] input").setValue("Хабаровск");
         $("[data-test-id='date'] input").sendKeys(selectAll, del);
-        $("[class='input__control'][type=tel]").setValue(currentDate);
+        $("[data-test-id='date'] input").setValue(currentDate);
         $("[data-test-id='name'] input").setValue("Копатилов Андрей");
         $("[data-test-id='phone'] input").setValue("89098765432");
         $("[data-test-id=agreement]").click();
@@ -49,7 +49,7 @@ public class CardDeliveryTest {
         open("http://localhost:9999");
         $("[data-test-id='city'] input").setValue("Хабаровск");
         $("[data-test-id='date'] input").sendKeys(selectAll, del);
-        $("[class='input__control'][type=tel]").setValue(currentDate);
+        $("[data-test-id='date'] input").setValue(currentDate);
         $("[data-test-id='name'] input").setValue("Kopatilov Andrey");
         $("[data-test-id='phone'] input").setValue("+79098765432");
         $("[data-test-id=agreement]").click();
@@ -62,7 +62,7 @@ public class CardDeliveryTest {
         open("http://localhost:9999");
         $("[data-test-id='city'] input").setValue("Хабаровск");
         $("[data-test-id='date'] input").sendKeys(selectAll, del);
-        $("[class='input__control'][type=tel]").setValue(currentDate);
+        $("[data-test-id='date'] input").setValue(currentDate);
         $("[data-test-id='name'] input").setValue("Копатилов Андрей");
         $("[data-test-id='phone'] input").setValue("+79098765432");
         $$("button").find(exactText("Забронировать")).click();
@@ -74,7 +74,7 @@ public class CardDeliveryTest {
     void shouldCityNotSelected() {
         open("http://localhost:9999");
         $("[data-test-id='date'] input").sendKeys(selectAll, del);
-        $("[class='input__control'][type=tel]").setValue(currentDate);
+        $("[data-test-id='date'] input").setValue(currentDate);;
         $("[data-test-id='name'] input").setValue("Копатилов Андрей");
         $("[data-test-id='phone'] input").setValue("+79098765432");
         $("[data-test-id=agreement]").click();
@@ -88,7 +88,7 @@ public class CardDeliveryTest {
         open("http://localhost:9999");
         $("[data-test-id='city'] input").setValue("Бикин");
         $("[data-test-id='date'] input").sendKeys(selectAll, del);
-        $("[class='input__control'][type=tel]").setValue(currentDate);
+        $("[data-test-id='date'] input").setValue(currentDate);
         $("[data-test-id='name'] input").setValue("Копатилов Андрей");
         $("[data-test-id='phone'] input").setValue("+79098765432");
         $("[data-test-id=agreement]").click();
